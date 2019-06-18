@@ -3,3 +3,6 @@ export { SubjectsModel };
 
 import { LMSModel } from './lmsmodel';
 export { LMSModel };
+
+import { TeachersModel } from './teachersmodel';
+export { TeachersModel };

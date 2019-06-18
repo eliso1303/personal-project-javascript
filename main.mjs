@@ -1,8 +1,8 @@
-import { SubjectsModel, LMSModel } from './schools';
+import { SubjectsModel, LMSModel, TeachersModel } from './schools';
 
 const history = new SubjectsModel({
     title: 'History',
-    lessons: 24, 
+    lessons: 24,
     description: 'tralala'
 });
 
@@ -41,3 +41,79 @@ console.log(lms.readAll());
 //     }
 //   ]
 console.log('-------------------------');
+
+
+// {
+//     "name": {
+//       "first": "string",
+//       "last": "string"
+//     },
+//     "image": "string",
+//     "dateOfBirth": "string", // format date
+//     "emails": [
+//       {
+//         "email": "string",
+//         "primary": "boolean"
+//       }
+//     ],
+//     "phones": [
+//       {
+//         "phone": "string",
+//         "primary": "boolean"
+//       }
+//     ],
+//     "sex": "string", // male or female
+//     "subjects": [
+//       {
+//         "subject": "string"
+//       }
+//     ],
+//     "description": "string",
+//   }
+// all fields are required, except description
+
+// Create new Teacher from Teacher's data
+let data = {
+    name: {
+        first: "John",
+        last: "Doe"
+    },
+    image: "string",
+    dateOfBirth: "31.12.2020",
+    emails: [
+        {
+            "email": "aaa@aaa.com",
+            "primary": true
+        },
+        {
+            "email": "bbb@bbb.com",
+            "primary": false
+        }
+    ],
+    phones: [
+        {
+            "phone": "85868866586",
+            "primary": true
+        }
+    ],
+    sex: "male",
+    subjects: [
+        {
+            "subject": "string"
+        }
+    ],
+    
+}
+const teachers = new TeachersModel();
+
+// Create a new teacher
+const teacherId = teachers.add(data);
+
+// will return Teachers data including teacher's id
+// teachers.read(teacherId)
+
+// // will update Teacher. This method should use the same validation as a constructor method
+// const teacherId = teachers.update(teacherId, updatedProfile)
+
+// // will remove techer
+// teachers.remove(teacherId)
