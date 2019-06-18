@@ -2,12 +2,12 @@ export class LMSModel {
     constructor() {
         this.subjects = new Map();
     }
-    add(subject) {
+    async add(subject) {
         if (subject && typeof subject === 'object' && subject.id) {
             this.subjects.set(subject.id, subject);
         }
     }
-    remove(subject) {
+    async remove(subject) {
         if (this.subjects.has(subject.id)) {
             this.subjects.delete(subject.id);
         } else {
@@ -15,11 +15,11 @@ export class LMSModel {
         }
     }
 
-    verify(subject) {
+    async verify(subject) {
         return this.subjects.has(subject.id) ? true : false;
     }
 
-    readAll() {
+    async readAll() {
         if(arguments.length > 0){
             throw new Error("must not be arguments")
         }else{
