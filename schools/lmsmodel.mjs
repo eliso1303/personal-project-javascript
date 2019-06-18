@@ -20,6 +20,14 @@ export class LMSModel {
     }
 
     readAll() {
-        return [this.subjects];
+        if(arguments.length > 0){
+            throw new Error("must not be arguments")
+        }else{
+            let registeredSubjects = [];
+            this.subjects.forEach((value, key, ownMap) => {
+               registeredSubjects.push({'subjectId': key});
+            });
+            return registeredSubjects;
+        }
     }
 }

@@ -20,6 +20,8 @@ console.log(history);
 console.log(geo.id);
 console.log(geo2.id);
 
+console.log('-------------------------');
+
 const lms = new LMSModel();
 lms.add(history);
 lms.add(geo);
@@ -28,7 +30,7 @@ lms.add(geo);
 console.log(lms);
 
 // // will return true or false. Answer will be true if we added this subject to lms
-console.log(lms.verify(geo));
+console.log(lms.verify(history));
 
 // // will return array of registered subjects
 console.log(lms.readAll());
@@ -38,3 +40,4 @@ console.log(lms.readAll());
 //       subjectId: null
 //     }
 //   ]
+console.log('-------------------------');
