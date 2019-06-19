@@ -34,7 +34,7 @@ export class TeachersModel {
     add(teacher) {
         if (Validate.validation(teacher, this.schema)) {
             Validate.moreValidate(teacher);
-            let id = new Date().getUTCMilliseconds() + Math.random();
+            let id = '_' + Math.random().toString(36).substr(2, 9);
             this.teachers.set(id, teacher);
             return id;
         } else {

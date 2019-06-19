@@ -53,59 +53,59 @@ export class Validate {
     }
 }
 
-console.log(Validate.validation({
-    name: {
-        first: "John",
-        last: "Doe"
-    },
-    image: "string",
-    dateOfBirth: "31.12.2020",
-    emails: [
-        {
-            "email": "aaa@aaa.com",
-            "primary": true
-        },
-        {
-            "email": "bbb@bbb.com",
-            "primary": false
-        }
-    ],
-    phones: [
-        {
-            "phone": "85868866586",
-            "primary": true
-        }
-    ],
-    sex: "male",
-    subjects: [
-        {
-            "subject": "string"
-        }
-    ],
+// console.log(Validate.validation({
+//     name: {
+//         first: "John",
+//         last: "Doe"
+//     },
+//     image: "string",
+//     dateOfBirth: "31.12.2020",
+//     emails: [
+//         {
+//             "email": "aaa@aaa.com",
+//             "primary": true
+//         },
+//         {
+//             "email": "bbb@bbb.com",
+//             "primary": false
+//         }
+//     ],
+//     phones: [
+//         {
+//             "phone": "85868866586",
+//             "primary": true
+//         }
+//     ],
+//     sex: "male",
+//     subjects: [
+//         {
+//             "subject": "string"
+//         }
+//     ],
     
-}, {
-    "name": {
-      "first": "string",
-      "last": "string"
-    },
-    "image": "string",
-    "dateOfBirth": "string", // format date
-    "emails": [
-      {
-        "email": "string",
-        "primary": "boolean"
-      }
-    ],
-    "phones": [
-      {
-        "phone": "string",
-        "primary": "boolean"
-      }
-    ],
-    "sex": "string", // male or female
-    "subjects": [
-      {
-        "subject": "string"
-      }
-    ]
-  }));
+// }, {
+//     "name": {
+//       "first": "string",
+//       "last": "string"
+//     },
+//     "image": "string",
+//     "dateOfBirth": "string", // format date
+//     "emails": [
+//       {
+//         "email": "string",
+//         "primary": "boolean"
+//       }
+//     ],
+//     "phones": [
+//       {
+//         "phone": "string",
+//         "primary": "boolean"
+//       }
+//     ],
+//     "sex": "string", // male or female
+//     "subjects": [
+//       {
+//         "subject": "string"
+//       }
+//     ]
+//   }));

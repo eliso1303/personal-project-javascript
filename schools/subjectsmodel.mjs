@@ -8,7 +8,7 @@ export class SubjectsModel {
             "description": "string"
         }
         if (Validate.validation(object, this.schema)) {
-            this.id = new Date().getUTCMilliseconds() + Math.random();
+            this.id = '_' + Math.random().toString(36).substr(2, 9);
             this.title = object.title;
             this.lessons = object.lessons;
             this.description = object.description;

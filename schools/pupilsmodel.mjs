@@ -18,18 +18,20 @@ export class PupilsModel {
             ],
             "sex": "string", // male OR female
           }
-          this.id=new Date().getUTCMilliseconds() + Math.random();
     }
 
     add(pupil) {
         if (Validate.validation(pupil, this.schema)) {
             Validate.moreValidate(pupil);
-            this.pupils.set(this.id, pupil);
-            return this.id;
+            let id='_' + Math.random().toString(36).substr(2, 9);
+            pupil.id = id;
+            this.pupils.set(id, pupil);
+            return this.pupils.get(id);
         } else {
             throw new Error('Not an object, or invalid argument');
         }
     }
+
 
     read(id) {
         if(this.pupils.has(id)){
