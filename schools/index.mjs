@@ -12,3 +12,6 @@ export { PupilsModel };
 
 import { GroupsModel } from './groupsmodel';
 export { GroupsModel };
+
+import { GradebooksModel } from './gradebooksmodel';
+export { GradebooksModel };
