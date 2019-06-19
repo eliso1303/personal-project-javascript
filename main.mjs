@@ -1,4 +1,4 @@
-import { SubjectsModel, LMSModel, TeachersModel } from './schools';
+import { SubjectsModel, LMSModel, TeachersModel, PupilsModel } from './schools';
 
 const history = new SubjectsModel({
     title: 'History',
@@ -23,7 +23,7 @@ console.log(history);
 console.log(geo.id);
 console.log(geo2.id);
 
-console.log('-------------------------');
+console.log('------------ subject end -------------');
 
 const lms = new LMSModel();
 lms.add(history);
@@ -38,42 +38,7 @@ console.log(lms.verify(geo));
 // // will return array of registered subjects
 console.log(lms.readAll());
 
-//   [
-//     {
-//       subjectId: null
-//     }
-//   ]
-console.log('-------------------------');
-
-
-// {
-//     "name": {
-//       "first": "string",
-//       "last": "string"
-//     },
-//     "image": "string",
-//     "dateOfBirth": "string", // format date
-//     "emails": [
-//       {
-//         "email": "string",
-//         "primary": "boolean"
-//       }
-//     ],
-//     "phones": [
-//       {
-//         "phone": "string",
-//         "primary": "boolean"
-//       }
-//     ],
-//     "sex": "string", // male or female
-//     "subjects": [
-//       {
-//         "subject": "string"
-//       }
-//     ],
-//     "description": "string",
-//   }
-// all fields are required, except description
+console.log('------------ lms end -------------');
 
 // Create new Teacher from Teacher's data
 let data = {
@@ -82,7 +47,7 @@ let data = {
         last: "Doe"
     },
     image: "string",
-    dateOfBirth: "31.12.2020",
+    dateOfBirth: "31.12.2019",
     emails: [
         {
             "email": "aaa@aaa.com",
@@ -96,7 +61,7 @@ let data = {
     phones: [
         {
             "phone": "85868866586",
-            "primary": 'true'
+            "primary": true
         }
     ],
     sex: "male",
@@ -105,20 +70,139 @@ let data = {
             "subject": "string"
         }
     ],
+    description: "description",
+}
+
+let data2 = {
+    name: {
+        first: "aaaa",
+        last: "ffff"
+    },
+    image: "strifffffff",
+    dateOfBirth: "02.03.2019",
+    emails: [
+        {
+            "email": "ttttt",
+            "primary": true
+        },
+        {
+            "email": "ttttt",
+            "primary": false
+        }
+    ],
+    phones: [
+        {
+            "phone": "4564454545",
+            "primary": true
+        }
+    ],
+    sex: "male",
+    subjects: [
+        {
+            "subject": "aaaaa"
+        }
+    ],
     
 }
 
+
+let newTeacherInfo = {
+    name: {
+        first: "teacher",
+        last: "teacherlastaname"
+    },
+    image: "strifffffff",
+    dateOfBirth: "02.03.2019",
+    emails: [
+        {
+            "email": "ttttt",
+            "primary": true
+        },
+        {
+            "email": "ttttt",
+            "primary": false
+        }
+    ],
+    phones: [
+        {
+            "phone": "4564454545",
+            "primary": true
+        }
+    ],
+    sex: "male",
+    subjects: [
+        {
+            "subject": "aaaaa"
+        }
+    ],
+    
+}
 // Create new Teacher from Teacher's data
 const teachers = new TeachersModel();
 
 // Create a new teacher
 const teacherId = teachers.add(data);
+const teacherId2 = teachers.add(data2);
+console.log(teacherId2);
+
 
 // will return Teachers data including teacher's id
-// teachers.read(teacherId);
+teachers.read(teacherId);
 
 // will update Teacher. This method should use the same validation as a constructor method
-// const teacherId = teachers.update(teacherId, updatedProfile);
+// const teacherId = teachers.update(teacherId, newTeacherInfo);
 
 // will remove techer
-// teachers.remove(teacherId);
+teachers.remove(teacherId);
+
+console.log('------------ teachers end -------------');
+const pupildata = {
+    name: {
+        first: "pupil1",
+        last: "pupil1lastaname"
+    },
+    image: "strifffffff",
+    dateOfBirth: "02.03.2019",
+    phones: [
+        {
+            "phone": "4564454545",
+            "primary": true
+        }
+    ],
+    sex: "male",
+}
+
+const updatedProfile = {
+    name: {
+        first: "pupil2",
+        last: "pupil2lastaname"
+    },
+    image: "strifffffff",
+    dateOfBirth: "02.03.2019",
+    phones: [
+        {
+            "phone": "4564454545",
+            "primary": true
+        }
+    ],
+    sex: "male",
+}
+
+// Create new Pupil from Pupil's data
+const pupils = new PupilsModel();
+
+// Create a new pupil
+console.log(pupils.add(pupildata));
+// const pupil = pupils.add(pupildata);
+
+// will return Pupils data including pupil's id
+// console.log(pupils.id);
+// console.log(pupils.read(pupil.id));
+
+// // will update Pupil. This method should use the same validation as a constructor method
+// pupils.update(pupil.id, updatedProfile);
+
+// // will remove pupil
+// pupils.remove(pupil.id);
+
+console.log('------------ pupils end -------------');
