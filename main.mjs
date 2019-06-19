@@ -156,53 +156,53 @@
 // teachers.remove(teacherId);
 
 // console.log('------------ teachers end -------------');
-// const pupildata = {
-//     name: {
-//         first: "pupil1",
-//         last: "pupil1lastaname"
-//     },
-//     image: "strifffffff",
-//     dateOfBirth: "02.03.2019",
-//     phones: [
-//         {
-//             "phone": "4564454545",
-//             "primary": true
-//         }
-//     ],
-//     sex: "male",
-// }
+const pupildata = {
+    name: {
+        first: "pupil1",
+        last: "pupil1lastaname"
+    },
+    image: "strifffffff",
+    dateOfBirth: "02.03.2019",
+    phones: [
+        {
+            "phone": "4564454545",
+            "primary": true
+        }
+    ],
+    sex: "male",
+}
 
-// const updatedProfile = {
-//     name: {
-//         first: "pupil2",
-//         last: "pupil2lastaname"
-//     },
-//     image: "strifffffff",
-//     dateOfBirth: "02.03.2019",
-//     phones: [
-//         {
-//             "phone": "4564454545",
-//             "primary": true
-//         }
-//     ],
-//     sex: "male",
-// }
+const updatedProfile = {
+    name: {
+        first: "pupil2",
+        last: "pupil2lastaname"
+    },
+    image: "strifffffff",
+    dateOfBirth: "02.03.2019",
+    phones: [
+        {
+            "phone": "4564454545",
+            "primary": true
+        }
+    ],
+    sex: "male",
+}
 
-// const pupils = new PupilsModel();
+const pupils = new PupilsModel();
 
-// // Create a new pupil
-// const pupil = pupils.add(pupildata);
-
-
-// // will return Pupils data including pupil's id
-// pupils.read(pupil.id);
-
-// // will update Pupil. This method should use the same validation as a constructor method
-// pupils.update(pupil.id, updatedProfile);
+// Create a new pupil
+const pupil = pupils.add(pupildata);
 
 
-// // will remove pupil
-// pupils.remove(pupil.id);
+// will return Pupils data including pupil's id
+pupils.read(pupil.id);
+
+// will update Pupil. This method should use the same validation as a constructor method
+pupils.update(pupil.id, updatedProfile);
+
+
+// will remove pupil
+pupils.remove(pupil.id);
 
 // console.log('------------ pupils end -------------');
 const room = 236;
@@ -211,23 +211,25 @@ const groups = new GroupsModel();
 // Create a new group
 const groupId = groups.add(room);
 
-// Remove this pupil from this group
-// groups.removePupil(groupId, pupil.id);
-
-// // Add this pupil to this group
+// Add this pupil to this group
 groups.addPupil(groupId, pupil);
 
-// // Update room for this group
-// groups.update(groupId, {
-//   room: 237
-// });
+// Remove this pupil from this group
+groups.removePupil(groupId, pupil.id);
 
-// // Read information about group
-// groups.read(groupId);
+
+
+// Update room for this group
+groups.update(groupId, {
+  room: 237
+});
+
+// Read information about group
+groups.read(groupId);
 // {
 //   id: 'JEF5H43H'
 //   room: 237
 // }
 
 // // It will return array of groups
-// groups.readAll()
+groups.readAll();
